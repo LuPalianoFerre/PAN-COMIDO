@@ -1,0 +1,67 @@
+/* Fondo navbar tipo beige claro similar al logo */
+.navbar-custom {
+    background-color: #FBDCA0;
+}
+
+/* Marca del navbar - color y tamaño font */
+.navbar-brand {
+    color: #000;
+    font-size: 3rem;
+}
+
+/* Icono hamburguesa color invertido para visibilidad en beige */
+.toggler-icon-custom {
+    filter: invert(1);
+}
+
+/* Peso del texto de los links del navbar */
+.nav-font-weight {
+    font-weight: 600;
+}
+
+.nav-link-custom {
+    color: #000;
+    transition: color 0.3s, border-bottom 0.3s;
+    font-size: 3rem;
+    margin-right: 6rem; /* Incrementamos el margin-right para mayor separación */
+}
+
+.nav-link-custom:last-child {
+    margin-right: 0; /* No margen en el último ítem */
+}
+
+/* Estilo hover, cambio a café oscuro y subrayado */
+.nav-link-custom:hover {
+    color: #7A4F01 !important;
+    border-bottom: 3px solid #7A4F01;
+}
+
+.nav-link i {
+  margin-right: 0.5rem; /* espacio entre icono y texto */
+  font-size: 2rem; /* tamaño del icono */
+  vertical-align: middle;
+}
+
+/* Tamaño y ajuste del logo dentro del navbar */
+.logo-navbar {
+  max-height: 180px; /* Altura máxima del logo para que no sea muy grande */
+  width: auto;      /* Ancho automático para respetar proporción */
+  display: block;   /* Bloque para evitar espacios indeseados */
+}
+
+/* Ajuste del navbar para que pueda crecer si el logo necesita más espacio */
+.navbar {
+  min-height: 130px; /* Altura mínima más amplia para no cortarlo */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .logo-navbar {
+    max-height: 80px; /* Sigue siendo más grande pero no tan exagerado */
+  }
+  .navbar {
+    min-height: 90px;
+  }
+}
+

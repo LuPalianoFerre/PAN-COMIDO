@@ -23,6 +23,78 @@
       "alt": "Bondiola braseada",
       "titulo": "Bondiola braseada",
       "descripcion": "Bondiola braseada a la cerveza con Zanahoria, cebolla morrón y queso danbo."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Aceitunas y queso",
+      "titulo": "Aceitunas y Queso",
+      "descripcion": "Deliciosa mezcla de aceitunas y queso."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Calabaza, parmesano, queso crema",
+      "titulo": "Calabaza, Parmesano y Queso Crema",
+      "descripcion": "Empanada rellena con calabaza, parmesano y queso crema."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Berenjena, tomate y queso",
+      "titulo": "Berenjena, Tomate y Queso",
+      "descripcion": "Sabor casero de berenjena, tomate y queso."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "4 Quesos",
+      "titulo": "Cuatro Quesos",
+      "descripcion": "Mozzarella, Danbo, Parmesano y Azul en perfecta armonía."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Tomate, albahaca y queso",
+      "titulo": "Tomate, Albahaca y Queso",
+      "descripcion": "Tomate fresco, albahaca aromática y queso delicioso."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Jamón y queso",
+      "titulo": "Jamón y Queso",
+      "descripcion": "Jamón natural y queso fundido en cada bocado."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Panceta y queso",
+      "titulo": "Panceta y Queso",
+      "descripcion": "Crujiente panceta combinada con queso."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Longaniza y queso",
+      "titulo": "Longaniza y Queso",
+      "descripcion": "Exquisita longaniza con queso fundido."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Tomate, berenjena, muzza, veg",
+      "titulo": "Tomate, Berenjena y Muzza Veg",
+      "descripcion": "Opción vegetariana con tomate, berenjena y muzarella."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Tomate, Albahaca, muzza veg",
+      "titulo": "Tomate, Albahaca y Muzza Veg",
+      "descripcion": "Tomate y albahaca frescos con muzarella vegetariana."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Espinaca, sésamo y muzza veg",
+      "titulo": "Espinaca, Sésamo y Muzza Veg",
+      "descripcion": "Relleno saludable con espinaca, sésamo y muzarella veg."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Aceitunas y muzza veg",
+      "titulo": "Aceitunas y Muzza Veg",
+      "descripcion": "Deliciosas aceitunas combinadas con muzarella veg."
     }
   ],
   "cookies": [
@@ -82,7 +154,7 @@
       "titulo": "Budin de Otro",
       "descripcion": "Budin de Otro"
     },
-        {
+    {
       "imagen": "img/budin_carrot_carrousel.jpg",
       "alt": "Budin de Otro",
       "titulo": "Budin de Otro",

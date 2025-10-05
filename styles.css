@@ -4,6 +4,26 @@ body {
   color: #ffffff; /* texto claro para contraste */
 }
 
+main.container {
+  /* Padding relativo según tamaño de fuente raíz */
+  padding-bottom: 7rem; /* equivalente a 72px si la fuente raíz es 16px */
+
+  /* Ajuste responsivo para pantallas pequeñas */
+}
+
+@media (max-width: 768px) {
+  main.container {
+    padding-bottom: 3.5rem; /* menor padding en móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  main.container {
+    padding-bottom: 2.5rem; /* aún menor en pantallas muy pequeñas */
+  }
+}
+
+
 /* Navbar y footer */
 footer, .navbar-custom {
   background-color: #FBDCA0 !important; /* fondo beige claro */
@@ -103,14 +123,6 @@ footer, .navbar-custom {
   .navbar {
     min-height: 60px;
   }
-}
-
-/* Footer */
-footer {
-  padding: 1rem 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
 }
 
 /* Cambios custom para icon hamburger */

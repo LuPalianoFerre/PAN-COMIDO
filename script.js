@@ -46,11 +46,21 @@ async function cargarProductos(tipo, contenedorId) {
   try {
     const response = await fetch('productos.json');
     const data = await response.json();
+
+    // Verificar que el tipo exista y sea un array válido
+    if (!data.hasOwnProperty(tipo) || !Array.isArray(data[tipo])) {
+      console.warn(`La categoría "${tipo}" no existe o no es un array en el JSON.`);
+      return;
+    }
+
     const productos = data[tipo];
     const contenedor = document.getElementById(contenedorId);
-    if (!contenedor) return;
+    if (!contenedor) {
+      console.warn(`No se encontró el contenedor con ID "${contenedorId}".`);
+      return;
+    }
 
-    contenedor.innerHTML = ''; // limpiar
+    contenedor.innerHTML = ''; // limpiar contenido previo
 
     productos.forEach(producto => {
       const col = document.createElement('div');
@@ -74,6 +84,7 @@ async function cargarProductos(tipo, contenedorId) {
     console.error('Error cargando productos:', error);
   }
 }
+
 
 //script boludito pa que al clickear el menu, y se abra modal, se pueda correr de imagen con el teclado
 // Lista de imágenes

@@ -12,6 +12,9 @@
     <!-- FontAwesome CSS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="img/logo_pancomido.png" />
+
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -24,41 +27,48 @@
     <!-- Contenedor principal del menú -->
     <div class="container my-5">
         <div class="row g-4">
-            <!-- Tarjeta 1 -->
+            <!-- Carnes -->
             <div class="col-12 col-md-4">
-                <div class="card h-100">
-                    <img src="img/14.jpg" class="card-img-top" alt="Producto 1" />
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Añadir al carrito
-                        </a>
-                    </div>
+                <div class="card h-100 border-0">
+                    <img src="img/14.jpg" class="img-fluid w-100 clickable-image" alt="carnes" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" data-bs-image="img/14.jpg" />
                 </div>
             </div>
 
-            <!-- Tarjeta 2 -->
+            <!-- MIXTAS -->
             <div class="col-12 col-md-4">
-                <div class="card h-100">
-                    <img src="img/13.jpg" class="card-img-top" alt="Producto 2" />
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Añadir al carrito
-                        </a>
-                    </div>
+                <div class="card h-100 border-0">
+                    <img src="img/13.jpg" class="img-fluid w-100 clickable-image" alt="mixtas" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" data-bs-image="img/13.jpg" />
                 </div>
             </div>
 
-            <!-- Tarjeta 3 -->
+            <!-- VEGS -->
             <div class="col-12 col-md-4">
-                <div class="card h-100">
-                    <img src="img/12.jpg" class="card-img-top" alt="Producto 3" />
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Añadir al carrito
-                        </a>
-                    </div>
+                <div class="card h-100 border-0">
+                    <img src="img/12.jpg" class="img-fluid w-100 clickable-image" alt="vegs" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" data-bs-image="img/12.jpg" />
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal para imagen al clickearla pa que se agrande -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                        data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    <img src="" id="modalImage" class="img-fluid rounded" alt="Imagen ampliada" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
 
     <!-- Contenedor para footer dinámico (se añade directamente al body) -->
     <!-- No se requiere div específico para footer según JS -->

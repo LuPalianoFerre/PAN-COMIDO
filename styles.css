@@ -44,7 +44,7 @@
 
 /* Tamaño y ajuste del logo dentro del navbar */
 .logo-navbar {
-  max-height: 180px; /* Altura máxima del logo para que no sea muy grande */
+  max-height: 6rem; /* Altura máxima del logo para que no sea muy grande */
   width: auto;      /* Ancho automático para respetar proporción */
   display: block;   /* Bloque para evitar espacios indeseados */
 }
@@ -55,6 +55,11 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
+.custom-toggler i {
+  color: #7b4b00 !important;
+}
+
 
 @media (max-width: 576px) {
   .logo-navbar {

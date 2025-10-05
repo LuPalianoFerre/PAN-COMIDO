@@ -188,7 +188,55 @@ footer {
 
 /* Footer íconos grandes */
 footer i.fab {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
+.footer-icon-link {
+  color: #7A4F01;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.footer-icon {
+  font-size: 2.5rem; /* similar a fa-4x */
+  vertical-align: middle; /* alinear verticalmente */
+  transition: color 0.3s;
+}
+
+.footer-icon-link:hover .footer-icon {
+  color: #5a3b00; /* color más oscuro al pasar */
+}
+
+
+#poema {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Fuente artística clásica y legible */
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #cec6b8; /* color marrón cálido acorde a la paleta */
+  line-height: 1.3;
+  max-width: 90vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Adaptaciones responsivas para móviles */
+@media (max-width: 768px) {
+  #poema {
+    font-size: 1.8rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #poema {
+    font-size: 1.4rem;
+    padding: 1.5rem 0.5rem;
+  }
+}
 

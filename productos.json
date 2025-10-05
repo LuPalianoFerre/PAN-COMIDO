@@ -47,8 +47,19 @@
       "alt": "Galleta Red Velvet",
       "titulo": "Galleta Red Velvet",
       "descripcion": "La roja de la Oriana."
+    },
+    {
+      "imagen": "img/cookies_carrousel.jpg",
+      "alt": "Chocolate Dubai",
+      "titulo": "Chocolate Dubai",
+      "descripcion": "Galleta de Chocolate con crema de pistacho y chips de chocolate blanco."
+    },
+    {
+      "imagen": "img/cookies (1).jpg",
+      "alt": "Nutella",
+      "titulo": "Galleta Choco Chips  Nutella",
+      "descripcion": "Galleta con chispas de chocolate rellena de Nutella."
     }
-    
   ],
 
 

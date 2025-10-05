@@ -41,3 +41,36 @@ imageModal.addEventListener('show.bs.modal', function (event) {
   modalImg.alt = img.alt;
 });
 
+//agregar las cards dinamicas segun los datos del json
+async function cargarProductos(tipo, contenedorId) {
+  try {
+    const response = await fetch('productos.json');
+    const data = await response.json();
+    const productos = data[tipo];
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) return;
+
+    contenedor.innerHTML = ''; // limpiar
+
+    productos.forEach(producto => {
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      col.innerHTML = `
+        <div class="card h-100 shadow-sm dark-card">
+          <div class="img-container">
+            <img src="${producto.imagen}" class="card-img-top" alt="${producto.alt}" />
+            <div class="overlay"></div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">${producto.titulo}</h5>
+            <p class="card-text">${producto.descripcion}</p>
+          </div>
+        </div>`;
+
+      contenedor.appendChild(col);
+    });
+  } catch (error) {
+    console.error('Error cargando productos:', error);
+  }
+}

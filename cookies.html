@@ -12,9 +12,9 @@
   <!-- FontAwesome CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- favicon -->
+  <!-- favicon -->
   <link rel="icon" type="image/png" href="img/logo_pancomido.png" />
-  
+
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -23,52 +23,9 @@
   <!-- Contenedor navbar dinámico -->
   <div id="navbar-container"></div>
 
-<!-- Contenido específico de la página Cookies -->
-<main class="container mt-4">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <!-- Tarjeta 1 -->
-    <div class="col">
-      <div class="card h-100 shadow-sm dark-card">
-        <div class="img-container">
-          <img src="img/cookies_carrousel.jpg" class="card-img-top" alt="Galleta Brownie" />
-          <div class="overlay"></div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Galleta Brownie</h5>
-          <p class="card-text">La que hace Sophi.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 2 -->
-    <div class="col">
-      <div class="card h-100 shadow-sm dark-card">
-        <div class="img-container">
-          <img src="img/cookies (1).jpg" class="card-img-top" alt="Galleta Carrot" />
-          <div class="overlay"></div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Galleta Carrot Cake</h5>
-          <p class="card-text">Las de la Oriana.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 3 -->
-    <div class="col">
-      <div class="card h-100 shadow-sm dark-card">
-        <div class="img-container">
-          <img src="img/cookies_carrousel.jpg" class="card-img-top" alt="Galleta Red Velvet" />
-          <div class="overlay"></div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Galleta Red Velvet</h5>
-          <p class="card-text">La roja de la Oriana.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
+  <main class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-4 g-4" id="productos-contenedor"></div>
+  </main>
 
 
   <!-- Bootstrap JS y Popper desde CDN -->
@@ -76,6 +33,11 @@
 
   <!-- Script para cargar navbar y footer -->
   <script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    cargarProductos('cookies', 'productos-contenedor');
+  });
+</script>
 </body>
 
 </html>

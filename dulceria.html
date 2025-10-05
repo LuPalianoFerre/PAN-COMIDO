@@ -12,63 +12,25 @@
   <!-- FontAwesome CSS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- favicon -->
+  <!-- favicon -->
   <link rel="icon" type="image/png" href="img/logo_pancomido.png" />
-  
+
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+
   <!-- Contenedor navbar dinámico -->
   <div id="navbar-container"></div>
 
-  <!-- Contenido específico de la página Dulcería -->
+  
   <main class="container mt-4">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <!-- Tarjeta 1 -->
-      <div class="col">
-        <div class="card h-100 shadow-sm dark-card">
-          <div class="img-container">
-            <img src="img/budin_carrot_carrousel.jpg" class="card-img-top" alt="Budin Carrot" />
-            <div class="overlay"></div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Budin Carrot</h5>
-            <p class="card-text">Delicioso.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tarjeta 2 -->
-      <div class="col">
-        <div class="card h-100 shadow-sm dark-card">
-          <div class="img-container">
-            <img src="img/budin_carrot_carrousel.jpg" class="card-img-top" alt="Budin de Otro" />
-            <div class="overlay"></div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Budin de Otro</h5>
-            <p class="card-text">Budin de Otro</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tarjeta 3 -->
-      <div class="col">
-        <div class="card h-100 shadow-sm dark-card">
-          <div class="img-container">
-            <img src="img/budin_carrot_carrousel.jpg" class="card-img-top" alt="Otro Budin" />
-            <div class="overlay"></div>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Otro Budin</h5>
-            <p class="card-text">Ingredientes.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4" id="productos-contenedor"></div>
   </main>
+
+
+
 
 
   <!-- Bootstrap JS y Popper desde CDN -->
@@ -76,6 +38,11 @@
 
   <!-- Script para cargar navbar y footer -->
   <script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    cargarProductos('dulceria', 'productos-contenedor');
+  });
+</script>
 </body>
 
 </html>

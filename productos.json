@@ -1,0 +1,77 @@
+{
+  "empanadas": [
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Carne",
+      "titulo": "Carne",
+      "descripcion": "Carne molida con cebolla y huevo duro."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Carne Picante",
+      "titulo": "Carne Picante",
+      "descripcion": "Carne picante con cebolla, catalanes, huevo y aceitunas"
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Carne al Vino Tinto",
+      "titulo": "Carne al Vino Tinto",
+      "descripcion": "Carne braseada al vino tinto con cebolla morrón y queso muzzarella."
+    },
+    {
+      "imagen": "img/empanada_carne.jpg",
+      "alt": "Bondiola braseada",
+      "titulo": "Bondiola braseada",
+      "descripcion": "Bondiola braseada a la cerveza con Zanahoria, cebolla morrón y queso danbo."
+    }
+  ],
+
+
+
+
+  "cookies": [
+    {
+      "imagen": "img/cookies_carrousel.jpg",
+      "alt": "Galleta Brownie",
+      "titulo": "Galleta Brownie",
+      "descripcion": "La que hace Sophi."
+    },
+    {
+      "imagen": "img/cookies (1).jpg",
+      "alt": "Galleta Carrot",
+      "titulo": "Galleta Carrot Cake",
+      "descripcion": "Las de la Oriana."
+    },
+    {
+      "imagen": "img/cookies_carrousel.jpg",
+      "alt": "Galleta Red Velvet",
+      "titulo": "Galleta Red Velvet",
+      "descripcion": "La roja de la Oriana."
+    }
+    
+  ],
+
+
+
+
+  "dulceria": [
+    {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Budin Carrot",
+      "titulo": "Budin Carrot",
+      "descripcion": "Delicioso."
+    },
+    {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Budin de Otro",
+      "titulo": "Budin de Otro",
+      "descripcion": "Budin de Otro"
+    },
+    {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Otro Budin",
+      "titulo": "Otro Budin",
+      "descripcion": "Ingredientes."
+    }
+  ]
+}

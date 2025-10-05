@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pan Comido - Dulcería</title>
+  <title>Pan Comido - Plum Cakes</title>
 
   <!-- Bootstrap CSS desde CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -20,29 +20,24 @@
 </head>
 
 <body>
-
   <!-- Contenedor navbar dinámico -->
   <div id="navbar-container"></div>
 
-  
   <main class="container mt-4">
     <div class="row row-cols-1 row-cols-md-4 g-4" id="productos-contenedor"></div>
   </main>
-
-
-
-
 
   <!-- Bootstrap JS y Popper desde CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Script para cargar navbar y footer -->
   <script src="script.js"></script>
+
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    cargarProductos('dulceria', 'productos-contenedor');
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+      cargarProductos('plum_cakes', 'productos-contenedor');
+    });
+  </script>
 </body>
 
 </html>

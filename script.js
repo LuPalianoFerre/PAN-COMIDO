@@ -20,9 +20,56 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(e => console.error('Error cargando footer:', e));
 });
 
-// Obtener parámetro URL
+// Obtener parámetros URL
 function getQueryParam(param) {
   return new URLSearchParams(window.location.search).get(param);
+}
+
+// Mostrar categorías Plum Cakes con imágenes específicas
+async function cargarCategoriasPlumCakes(contenedorId) {
+  try {
+    const res = await fetch('productos.json');
+    const data = await res.json();
+
+    const categorias = Object.keys(data.plum_cakes);
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) { console.warn(`No se encontró contenedor con id ${contenedorId}`); return; }
+
+    const imagenesPorCategoria = {
+      'ingles': 'img/budin_ingles.png',
+      'frutales': 'img/budin_frutales.png',
+      'clasicos': 'img/budin_clasico.png'
+    };
+
+    contenedor.innerHTML = '';
+
+    categorias.forEach(cat => {
+      const nombreCat = cat.charAt(0).toUpperCase() + cat.slice(1);
+      const imgSrc = imagenesPorCategoria[cat] || 'img/plum_cakes_default.jpg';
+
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      col.innerHTML = `
+  <div class="card h-100 shadow-sm dark-card clickable-image double-height" data-category-id="${cat}">
+    <div class="img-container">
+      <img src="${imgSrc}" alt="${nombreCat}" class="card-img-top"/>
+      <div class="overlay"></div>
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">${nombreCat}</h5>
+    </div>
+  </div>`;
+
+      col.querySelector('.clickable-image').addEventListener('click', () => {
+        window.location.href = `plum_cakes_category.html?cat=${cat}`;
+      });
+
+      contenedor.appendChild(col);
+    });
+  } catch (error) {
+    console.error('Error cargando categorías plum cakes:', error);
+  }
 }
 
 // Cargar productos para arrays planos (empanadas, cookies, etc)
@@ -70,48 +117,7 @@ async function cargarProductos(tipo, contenedorId) {
   }
 }
 
-// Cargar categorías Plum Cakes como tarjetas
-async function cargarCategoriasPlumCakes(contenedorId) {
-  try {
-    const res = await fetch('productos.json');
-    const data = await res.json();
-
-    const categorias = Object.keys(data.plum_cakes);
-    const contenedor = document.getElementById(contenedorId);
-    if (!contenedor) return console.warn(`No se encontró contenedor con id ${contenedorId}`);
-
-    contenedor.innerHTML = '';
-
-    categorias.forEach(cat => {
-      const nombreCat = cat.charAt(0).toUpperCase() + cat.slice(1);
-      const imgSrc = 'img/plum_cakes_default.jpg';
-
-      const col = document.createElement('div');
-      col.className = 'col';
-
-      col.innerHTML = `
-        <div class="card h-100 shadow-sm dark-card clickable-image" data-category-id="${cat}">
-          <div class="img-container">
-            <img src="${imgSrc}" alt="${nombreCat}" class="card-img-top"/>
-            <div class="overlay"></div>
-          </div>
-          <div class="card-body text-center">
-            <h5 class="card-title">${nombreCat}</h5>
-          </div>
-        </div>`;
-
-      col.querySelector('.clickable-image').addEventListener('click', () => {
-        window.location.href = `plum_cakes_category.html?cat=${cat}`;
-      });
-
-      contenedor.appendChild(col);
-    });
-  } catch (error) {
-    console.error('Error cargando categorías plum cakes:', error);
-  }
-}
-
-// Cargar productos Plum Cakes de categoría
+// Cargar productos según categoría específica de Plum Cakes
 async function cargarProductosPorCategoria(categoria, contenedorId) {
   try {
     const res = await fetch('productos.json');
@@ -208,7 +214,7 @@ async function cargarDetalleProducto(productId, contenedorDetalleId, contenedorT
   }
 }
 
-// Modal imagen y navegación con teclas si existe
+// Modal imagen y navegación con teclado si existe
 const imageModal = document.getElementById('imageModal');
 if (imageModal) {
   imageModal.addEventListener('show.bs.modal', event => {

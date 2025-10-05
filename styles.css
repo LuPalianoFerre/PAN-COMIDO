@@ -2,6 +2,7 @@
 body {
   background-color: #16161a; /* fondo oscuro */
   color: #ffffff; /* texto claro para contraste */
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 main.container {
@@ -272,7 +273,7 @@ footer i.fab {
   align-items: center;
   text-align: center;
   padding: 3rem 1rem;
-  font-family: 'Georgia', 'Times New Roman', serif; /* Fuente artística clásica y legible */
+  font-family: 'Montserrat', sans-serif;
   font-style: italic;
   font-weight: 600;
   font-size: 2.5rem;
@@ -319,4 +320,46 @@ footer i.fab {
 
 .card:hover {
   box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+/* Aca pa agrandar solo las cartas de Categorias en plumcakes*/
+/* Contenedor tarjeta: altura relativa ajustable */
+.double-height {
+  height: 30rem; /* altura relativa basada en la raíz del documento */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contenedor de imagen crece para ocupar espacio */
+.double-height .img-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* Imagen ocupa todo el contenedor de imagen */
+.double-height .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Espacio justo para el cuerpo de la carta */
+.double-height .card-body {
+  padding: 0.5rem 1rem;
+  flex-shrink: 0; /* no se reduce */
+}
+
+/* Título con tamaño relativo para buena legibilidad */
+.double-height .card-title {
+  margin: 0;
+  font-size: 1.25rem; /* tamaño relativo, ajustable */
+  line-height: 1.3;
+  padding: 0;
+  white-space: nowrap; /* evita salto de línea si se quiere */
+  overflow: hidden;
+  text-overflow: ellipsis; /* recorta texto muy largo */
 }

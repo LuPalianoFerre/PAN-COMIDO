@@ -1,3 +1,10 @@
+/* Fondo oscuro para todo el sitio */
+body {
+    background-color: #16161a; /* color similar al fondo de Perplexity */
+    color: #ffffff; /* opcional: ajustar el color de texto para contraste */
+}
+
+
 /* Fondo navbar tipo beige claro similar al logo */
 footer, .navbar-custom {
     background-color: #FBDCA0 !important;
@@ -186,5 +193,8 @@ footer {
     transform: scale(1.05);
 }
 
+footer i.fab {
+    font-size: 4rem; /* ajustar tamaño en rem */
+}
 
 

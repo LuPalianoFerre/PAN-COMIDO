@@ -65,3 +65,10 @@
   }
 }
 
+
+/* CARROUSEL */
+.carousel-inner img {
+  width: 100%;      /* Ocupa todo el ancho del contenedor */
+  height: 60vh;     /* Alto relativo a la altura de la ventana */
+  object-fit: cover; /* Ajusta la imagen sin distorsión */
+}

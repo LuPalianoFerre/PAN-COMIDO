@@ -207,7 +207,34 @@ footer i.fab {
   color: #5a3b00; /* color más oscuro al pasar */
 }
 
+/* TARJETAS DEL menu */
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  /* Opcional: una sombra suave normal para dar profundidad */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
+.clickable-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  filter: brightness(1.1);
+}
+
+/* Para que el card tenga un pequeño efecto flotante */
+.card {
+  transition: box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+
+/* POEMA DEL INDEX*/
 #poema {
   display: flex;
   justify-content: center;
@@ -240,3 +267,25 @@ footer i.fab {
   }
 }
 
+/* ESTILOS PARA LA BOLUDINA DE EVENT.KEY EN LA PAGINA MENU */
+.clickable-image {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.clickable-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  filter: brightness(1.1);
+}
+
+.card {
+  transition: box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}

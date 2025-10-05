@@ -74,3 +74,48 @@ async function cargarProductos(tipo, contenedorId) {
     console.error('Error cargando productos:', error);
   }
 }
+
+//script boludito pa que al clickear el menu, y se abra modal, se pueda correr de imagen con el teclado
+// Lista de imágenes
+document.addEventListener('DOMContentLoaded', () => {
+  const images = ['img/14.jpg', 'img/13.jpg', 'img/12.jpg'];
+  let currentIndex = 0;
+  let navigationEnabled = false;
+
+  const modalImage = document.getElementById('modalImage');
+  const imageModal = document.getElementById('imageModal');
+
+  // Abrir modal y activar navegación
+  document.querySelectorAll('.clickable-image').forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      modalImage.src = images[currentIndex];
+      navigationEnabled = true;
+    });
+  });
+
+  // Actualizar imagen en modal
+  function updateModalImage() {
+    modalImage.src = images[currentIndex];
+  }
+
+  // Navegación con teclado solo si modal está abierto y navegación activada
+  document.addEventListener('keydown', (event) => {
+    if (!navigationEnabled) return;
+    // Solo si el modal está visible
+    if (!imageModal.classList.contains('show')) return;
+
+    if (event.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateModalImage();
+    } else if (event.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateModalImage();
+    }
+  });
+
+  // Al cerrar el modal, desactivar navegación
+  imageModal.addEventListener('hidden.bs.modal', () => {
+    navigationEnabled = false;
+  });
+});

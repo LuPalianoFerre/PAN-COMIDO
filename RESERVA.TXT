@@ -1,0 +1,289 @@
+// AÑADIR EL NAV A TODOS LOS HTML
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('nav_bar.html')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('No se pudo cargar nav_bar.html');
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+    })
+    .catch(error => {
+      console.error('Error cargando barra de navegación:', error);
+    });
+});
+
+//añadir footer
+document.addEventListener("DOMContentLoaded", () => {
+  // Cargar navbar
+  fetch('footer.html')
+    .then(response => response.ok ? response.text() : Promise.reject('Error al cargar footer.html'))
+    .then(html => {
+      const footerDiv = document.createElement('div');
+      footerDiv.innerHTML = html;
+      document.body.appendChild(footerDiv);
+    })
+    .catch(error => {
+      console.error('Error cargando footer:', error);
+    });
+});
+
+
+// Cambia la imagen del modal al abrir en menu.html
+var imageModal = document.getElementById('imageModal')
+imageModal.addEventListener('show.bs.modal', function (event) {
+  var img = event.relatedTarget; // Imagen que disparó el modal
+  var src = img.getAttribute('data-bs-image');
+  var modalImg = imageModal.querySelector('#modalImage');
+  modalImg.src = src;
+  modalImg.alt = img.alt;
+});
+
+//agregar las cards dinamicas segun los datos del json
+async function cargarProductos(tipo, contenedorId) {
+  try {
+    const response = await fetch('productos.json');
+    const data = await response.json();
+
+    // Verificar que el tipo exista y sea un array válido
+    if (!data.hasOwnProperty(tipo) || !Array.isArray(data[tipo])) {
+      console.warn(`La categoría "${tipo}" no existe o no es un array en el JSON.`);
+      return;
+    }
+
+    const productos = data[tipo];
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) {
+      console.warn(`No se encontró el contenedor con ID "${contenedorId}".`);
+      return;
+    }
+
+    contenedor.innerHTML = ''; // limpiar contenido previo
+
+    productos.forEach(producto => {
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      col.innerHTML = `
+        <div class="card h-100 shadow-sm dark-card">
+          <div class="img-container">
+            <img src="${producto.imagen}" class="card-img-top" alt="${producto.alt}" />
+            <div class="overlay"></div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">${producto.titulo}</h5>
+            <p class="card-text">${producto.descripcion}</p>
+          </div>
+        </div>`;
+
+      contenedor.appendChild(col);
+    });
+  } catch (error) {
+    console.error('Error cargando productos:', error);
+  }
+}
+
+
+//script boludito pa que al clickear el menu, y se abra modal, se pueda correr de imagen con el teclado
+// Lista de imágenes
+document.addEventListener('DOMContentLoaded', () => {
+  const images = ['img/14.jpg', 'img/13.jpg', 'img/12.jpg'];
+  let currentIndex = 0;
+  let navigationEnabled = false;
+
+  const modalImage = document.getElementById('modalImage');
+  const imageModal = document.getElementById('imageModal');
+
+  // Abrir modal y activar navegación
+  document.querySelectorAll('.clickable-image').forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      modalImage.src = images[currentIndex];
+      navigationEnabled = true;
+    });
+  });
+
+  // Actualizar imagen en modal
+  function updateModalImage() {
+    modalImage.src = images[currentIndex];
+  }
+
+  // Navegación con teclado solo si modal está abierto y navegación activada
+  document.addEventListener('keydown', (event) => {
+    if (!navigationEnabled) return;
+    // Solo si el modal está visible
+    if (!imageModal.classList.contains('show')) return;
+
+    if (event.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateModalImage();
+    } else if (event.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateModalImage();
+    }
+  });
+
+  // Al cerrar el modal, desactivar navegación
+  imageModal.addEventListener('hidden.bs.modal', () => {
+    navigationEnabled = false;
+  });
+});
+
+
+//LO NUEVO
+// Función para obtener parámetros de URL
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+// Función para cargar y mostrar categorías de plum_cakes (para plum_cakes.html)
+async function cargarCategoriasPlumCakes(contenedorId) {
+  try {
+    const response = await fetch('productos.json');
+    const data = await response.json();
+    const categorias = Object.keys(data.plum_cakes);
+
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) {
+      console.warn(`No se encontró contenedor con id ${contenedorId}`);
+      return;
+    }
+
+    contenedor.innerHTML = '';
+
+    categorias.forEach(cat => {
+      // Convertir clave a nombre legible (ejemplo: ingles -> Inglés)
+      const nombreCat = cat.charAt(0).toUpperCase() + cat.slice(1);
+
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      col.innerHTML = `
+        <div class="card h-100 shadow-sm dark-card clickable-image">
+          <div class="card-body d-flex align-items-center justify-content-center">
+            <h3 class="text-center">${nombreCat}</h3>
+          </div>
+        </div>`;
+
+      col.querySelector('.clickable-image').addEventListener('click', () => {
+        window.location.href = `plum_cakes_category.html?cat=${cat}`;
+      });
+
+      contenedor.appendChild(col);
+    });
+  } catch (error) {
+    console.error('Error cargando categorías:', error);
+  }
+}
+
+// Función para cargar productos según categoría (para plum_cakes_category.html)
+async function cargarProductosPorCategoria(categoria, contenedorId) {
+  try {
+    const response = await fetch('productos.json');
+    const data = await response.json();
+
+    if (!data.plum_cakes.hasOwnProperty(categoria)) {
+      console.warn(`Categoría "${categoria}" no existe en JSON.`);
+      document.getElementById(contenedorId).innerHTML = `<p>Categoría inválida: ${categoria}</p>`;
+      return;
+    }
+
+    const productos = data.plum_cakes[categoria];
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) {
+      console.warn(`No se encontró contenedor con id ${contenedorId}`);
+      return;
+    }
+
+    contenedor.innerHTML = '';
+
+    productos.forEach(producto => {
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      col.innerHTML = `
+        <div class="card h-100 shadow-sm dark-card clickable-image" data-product-id="${producto.id}">
+          <div class="img-container">
+            <img src="img/plum_cakes_default.jpg" class="card-img-top" alt="${producto.titulo}" />
+            <div class="overlay"></div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">${producto.titulo}</h5>
+            ${producto.precio ? `<p class="card-text">$${producto.precio}</p>` : ''}
+          </div>
+        </div>`;
+
+      col.querySelector('.clickable-image').addEventListener('click', () => {
+        window.location.href = `plum_cakes_product.html?product=${producto.id}`;
+      });
+
+      contenedor.appendChild(col);
+    });
+  } catch (error) {
+    console.error('Error cargando productos por categoría:', error);
+  }
+}
+
+// Función para cargar detalles de producto y toppings (para plum_cakes_product.html)
+async function cargarDetalleProducto(productId, contenedorDetalleId, contenedorToppingsId) {
+  try {
+    const response = await fetch('productos.json');
+    const data = await response.json();
+
+    let producto = null;
+    let categoria = null;
+
+    for (const cat in data.plum_cakes) {
+      producto = data.plum_cakes[cat].find(p => p.id === productId);
+      if (producto) {
+        categoria = cat;
+        break;
+      }
+    }
+
+    if (!producto) {
+      document.getElementById(contenedorDetalleId).innerHTML = '<p>Producto no encontrado.</p>';
+      return;
+    }
+
+    const detalleDiv = document.getElementById(contenedorDetalleId);
+
+    detalleDiv.innerHTML = `
+      <div class="card h-100 shadow-sm dark-card">
+        <div class="img-container">
+          <img src="img/plum_cakes_default.jpg" alt="${producto.titulo}" class="card-img-top" />
+          <div class="overlay"></div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">${producto.titulo}</h3>
+          ${producto.precio ? `<p><strong>Precio:</strong> $${producto.precio}</p>` : ''}
+        </div>
+      </div>`;
+
+    // Mostrar toppings
+    const toppingsContenedor = document.getElementById(contenedorToppingsId);
+    toppingsContenedor.innerHTML = '';
+
+    data.toppings.forEach(topping => {
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      col.innerHTML = `
+        <div class="card h-100 shadow-sm dark-card">
+          <div class="card-body">
+            <h5 class="card-title">${topping.titulo}</h5>
+            <p class="card-text">$${topping.precio}</p>
+          </div>
+        </div>`;
+
+      toppingsContenedor.appendChild(col);
+    });
+
+  } catch (error) {
+    console.error('Error cargando detalle producto y toppings:', error);
+    document.getElementById(contenedorDetalleId).innerHTML = '<p>Error cargando el producto.</p>';
+  }
+}

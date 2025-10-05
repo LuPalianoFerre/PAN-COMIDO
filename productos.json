@@ -129,54 +129,175 @@
       "descripcion": "Galleta con chispas de chocolate rellena de Nutella."
     }
   ],
-  "plum_cakes": [
+  "plum_cakes": {
+    "ingles": [
+      {
+        "id": "frutas_abrillantadas",
+        "titulo": "Frutas abrillantadas"
+      },
+      {
+        "id": "frutos_secos_pasas",
+        "titulo": "Frutos secos y pasas"
+      },
+      {
+        "id": "ciruelas",
+        "titulo": "Ciruelas"
+      },
+      {
+        "id": "chispas_chocolate",
+        "titulo": "Chispas de chocolate"
+      },
+      {
+        "id": "vainilla",
+        "titulo": "Vainilla"
+      },
+      {
+        "id": "chocolate",
+        "titulo": "Chocolate"
+      },
+      {
+        "id": "marmolado",
+        "titulo": "Marmolado"
+      }
+    ],
+    "frutales": [
+      {
+        "id": "banana",
+        "titulo": "Banana",
+        "precio": 500
+      },
+      {
+        "id": "banana_chocolate",
+        "titulo": "Banana y chocolate"
+      },
+      {
+        "id": "banana_chispas_chocolate",
+        "titulo": "Banana y chispas de chocolate"
+      },
+      {
+        "id": "vainilla_frutos_rojos",
+        "titulo": "Vainilla y frutos rojos"
+      },
+      {
+        "id": "limon_amapola",
+        "titulo": "Limón y amapola"
+      },
+      {
+        "id": "limon_chocolate_blanco",
+        "titulo": "Limón chocolate blanco"
+      },
+      {
+        "id": "limon_arandanos",
+        "titulo": "Limón y arándanos"
+      },
+      {
+        "id": "limon",
+        "titulo": "Limón",
+        "precio": 500
+      },
+      {
+        "id": "naranja",
+        "titulo": "Naranja",
+        "precio": 500
+      },
+      {
+        "id": "chocolate_naranja",
+        "titulo": "Chocolate y naranja"
+      },
+      {
+        "id": "zanahoria_miel_nuez",
+        "titulo": "Zanahoria (carrot) (Miel, nuez, pasas de uva, canela y zanahoria)"
+      },
+      {
+        "id": "zanahoria_chispas_chocolate",
+        "titulo": "Zanahoria (carrot) (chispas de chocolate)"
+      }
+    ],
+    "clasicos": [
+      {
+        "id": "chocolate_nuez",
+        "titulo": "Chocolate con nuez"
+      },
+      {
+        "id": "chocolate_dulce_leche",
+        "titulo": "Chocolate dulce de leche"
+      },
+      {
+        "id": "vainilla",
+        "titulo": "Vainilla",
+        "precio": 500
+      },
+      {
+        "id": "marmolado",
+        "titulo": "Marmolado"
+      }
+    ]
+  },
+  "toppings": [
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Budin Carrot",
-      "titulo": "Budin Carrot",
-      "descripcion": "Delicioso."
+      "id": "ganache_chocolate_blanco",
+      "titulo": "Ganache de chocolate blanco",
+      "precio": 300
     },
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Budin de Otro",
-      "titulo": "Budin de Otro",
-      "descripcion": "Budin de Otro"
+      "id": "ganache_chocolate_negro",
+      "titulo": "Ganache de chocolate Negro",
+      "precio": 300
     },
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Budin de Otro",
-      "titulo": "Budin de Otro",
-      "descripcion": "Budin de Otro"
+      "id": "merengue_seco",
+      "titulo": "Merengue seco",
+      "precio": 150
     },
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Budin de Otro",
-      "titulo": "Budin de Otro",
-      "descripcion": "Budin de Otro"
+      "id": "chocolate_nuez",
+      "titulo": "Chocolate con nuez",
+      "precio": 250
     },
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Budin de Otro",
-      "titulo": "Budin de Otro",
-      "descripcion": "Budin de Otro"
+      "id": "glaseado_limon",
+      "titulo": "Glaseado de limón",
+      "precio": 100
     },
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Budin de Otro",
-      "titulo": "Budin de Otro",
-      "descripcion": "Budin de Otro"
+      "id": "glaseado_chocolate",
+      "titulo": "Glaseado de chocolate",
+      "precio": 150
     },
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Budin de Otro",
-      "titulo": "Budin de Otro",
-      "descripcion": "Budin de Otro"
+      "id": "glaseado_arandanos",
+      "titulo": "Glaseado de arándanos",
+      "precio": 150
     },
     {
-      "imagen": "img/budin_carrot_carrousel.jpg",
-      "alt": "Otro Budin",
-      "titulo": "Otro Budin",
-      "descripcion": "Ingredientes."
+      "id": "glaseado_dulce_leche",
+      "titulo": "Glaseado de dulce de leche",
+      "precio": 150
+    },
+    {
+      "id": "frosting_queso",
+      "titulo": "Frosting de queso",
+      "precio": 300
+    },
+    {
+      "id": "frosting_vainilla",
+      "titulo": "Frosting de vainilla",
+      "precio": 250
+    },
+    {
+      "id": "dulce_leche",
+      "titulo": "Dulce de leche",
+      "precio": 250
+    },
+    {
+      "id": "dulce_leche_bariloche",
+      "titulo": "Dulce de leche Bariloche",
+      "precio": 300
+    },
+    {
+      "id": "dulce_leche_chocolate",
+      "titulo": "Dulce de leche baño de chocolate",
+      "precio": 300
     }
   ]
 }

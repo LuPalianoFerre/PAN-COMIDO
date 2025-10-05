@@ -15,3 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+//añadir footer
+document.addEventListener("DOMContentLoaded", () => {
+  // Cargar navbar
+fetch('footer.html')
+    .then(response => response.ok ? response.text() : Promise.reject('Error al cargar footer.html'))
+    .then(html => {
+      const footerDiv = document.createElement('div');
+      footerDiv.innerHTML = html;
+      document.body.appendChild(footerDiv);
+    })
+    .catch(error => {
+      console.error('Error cargando footer:', error);
+    });
+});
+

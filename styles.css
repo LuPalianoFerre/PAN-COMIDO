@@ -1,6 +1,7 @@
+
 /* Fondo navbar tipo beige claro similar al logo */
-.navbar-custom {
-    background-color: #FBDCA0;
+footer, .navbar-custom {
+    background-color: #FBDCA0 !important;
 }
 
 /* Marca del navbar - color y tamaño font */
@@ -95,3 +96,20 @@
 .img-container img:hover {
   transform: scale(1.05); /* efecto zoom suave on hover */
 }
+
+/* footer */
+footer {
+  background-color: #FBDCA0 !important; 
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.navbar-custom {
+  background-color: #FBDCA0; /* un tono amarillo que usaste en tu footer antes */
+}
+
+
+
+

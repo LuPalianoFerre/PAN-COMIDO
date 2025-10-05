@@ -77,6 +77,25 @@ footer, .navbar-custom {
   display: block;
 }
 
+/* simular humito en el logo del nav*/
+@keyframes heatWave {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) skewX(0deg);
+    filter: drop-shadow(0 0 0.5rem rgba(255, 140, 0, 0.7));
+  }
+  50% {
+    transform: translate3d(0.125rem, 0.125rem, 0) skewX(4deg);
+    filter: drop-shadow(0 0 1rem rgba(199, 152, 50, 0.9));
+  }
+}
+
+.logo-navbar {
+  animation: heatWave 3s ease-in-out infinite;
+  will-change: transform, filter;
+}
+
+
+
 /* Navbar ajustes generales */
 .navbar {
   padding: 0.5rem 0;

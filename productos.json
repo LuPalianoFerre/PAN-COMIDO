@@ -25,25 +25,21 @@
       "descripcion": "Bondiola braseada a la cerveza con Zanahoria, cebolla morrón y queso danbo."
     }
   ],
-
-
-
-
   "cookies": [
     {
-      "imagen": "img/cookies_carrousel.jpg",
+      "imagen": "img/choco_brownie.png",
       "alt": "Galleta Brownie",
       "titulo": "Galleta Brownie",
       "descripcion": "La que hace Sophi."
     },
     {
-      "imagen": "img/cookies (1).jpg",
+      "imagen": "img/galleta_carrot.png",
       "alt": "Galleta Carrot",
       "titulo": "Galleta Carrot Cake",
       "descripcion": "Las de la Oriana."
     },
     {
-      "imagen": "img/cookies_carrousel.jpg",
+      "imagen": "img/red_velvet.png",
       "alt": "Galleta Red Velvet",
       "titulo": "Galleta Red Velvet",
       "descripcion": "La roja de la Oriana."
@@ -55,22 +51,48 @@
       "descripcion": "Galleta de Chocolate con crema de pistacho y chips de chocolate blanco."
     },
     {
-      "imagen": "img/cookies (1).jpg",
+      "imagen": "img/galleta_nutella.png",
       "alt": "Nutella",
       "titulo": "Galleta Choco Chips  Nutella",
       "descripcion": "Galleta con chispas de chocolate rellena de Nutella."
     }
   ],
-
-
-
-
   "dulceria": [
     {
       "imagen": "img/budin_carrot_carrousel.jpg",
       "alt": "Budin Carrot",
       "titulo": "Budin Carrot",
       "descripcion": "Delicioso."
+    },
+    {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Budin de Otro",
+      "titulo": "Budin de Otro",
+      "descripcion": "Budin de Otro"
+    },
+    {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Budin de Otro",
+      "titulo": "Budin de Otro",
+      "descripcion": "Budin de Otro"
+    },
+    {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Budin de Otro",
+      "titulo": "Budin de Otro",
+      "descripcion": "Budin de Otro"
+    },
+        {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Budin de Otro",
+      "titulo": "Budin de Otro",
+      "descripcion": "Budin de Otro"
+    },
+    {
+      "imagen": "img/budin_carrot_carrousel.jpg",
+      "alt": "Budin de Otro",
+      "titulo": "Budin de Otro",
+      "descripcion": "Budin de Otro"
     },
     {
       "imagen": "img/budin_carrot_carrousel.jpg",

@@ -105,22 +105,22 @@
       "descripcion": "La que hace Sophi."
     },
     {
-      "imagen": "img/galleta_carrot.png",
+      "imagen": "img/galleta_carrot_cake.jpg",
       "alt": "Galleta Carrot",
       "titulo": "Galleta Carrot Cake",
-      "descripcion": "Las de la Oriana."
+      "descripcion": "Galleta carrot con nueces, canela y relleno de frosting de queso crema"
     },
     {
-      "imagen": "img/red_velvet.png",
+      "imagen": "img/galleta_red_velvet.jpg",
       "alt": "Galleta Red Velvet",
       "titulo": "Galleta Red Velvet",
-      "descripcion": "La roja de la Oriana."
+      "descripcion": "Red velvet con relleno de frosting de queso crema"
     },
     {
-      "imagen": "img/cookies_carrousel.jpg",
+      "imagen": "img/galleta_choco_dubai.jpg",
       "alt": "Chocolate Dubai",
       "titulo": "Chocolate Dubai",
-      "descripcion": "Galleta de Chocolate con crema de pistacho y chips de chocolate blanco."
+      "descripcion": "Chocolate semi amargo con chips de chocolate blanco y crema de pistacho."
     },
     {
       "imagen": "img/galleta_nutella.png",
